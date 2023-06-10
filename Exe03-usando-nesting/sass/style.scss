@@ -1,0 +1,15 @@
+.lista {
+  ul {
+    background-color: black;
+  }
+
+  li {
+    width: 60%;
+    color: white;
+    background-color: red;
+
+    &:hover {
+      background-color: aqua;
+    }
+  }
+}

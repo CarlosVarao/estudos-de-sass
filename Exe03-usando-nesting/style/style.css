@@ -1,0 +1,13 @@
+.lista ul {
+  background-color: black;
+}
+.lista li {
+  width: 60%;
+  color: white;
+  background-color: red;
+}
+.lista li:hover {
+  background-color: aqua;
+}
+
+/*# sourceMappingURL=style.css.map */

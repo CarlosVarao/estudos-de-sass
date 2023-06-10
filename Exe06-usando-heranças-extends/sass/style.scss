@@ -1,0 +1,34 @@
+body{
+  height: 100vh;
+  background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+body .tt{
+  height: 40px;
+  color: white;
+
+  &.btn-blue{
+    background-color: blue;
+  }
+
+  &.btn-green{
+    background-color: green;
+  }
+}
+
+body > .btn-red{
+  @extend .tt;
+  background-color: red;
+}
+
+
+
+
+
+
+
+

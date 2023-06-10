@@ -1,0 +1,18 @@
+@mixin style-btm($borda-btn, $espacamento-btn, $cor-btn, $ponteiro-btn){
+  border: $borda-btn;
+  padding: $espacamento-btn;
+  background-color: $cor-btn;
+  cursor: $ponteiro-btn;
+}
+
+body{
+  background-color: lightslategray;
+
+  button{
+    @include style-btm(2px solid red, 10px, chocolate, pointer)
+  }
+}
+
+
+
+

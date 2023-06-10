@@ -1,0 +1,1 @@
+body{height:100vh;background-color:#a9a9a9;display:flex;align-items:center;justify-content:center;gap:20px}body .tt,body>.btn-red{height:40px;color:#fff}body .tt.btn-blue,body>.btn-blue.btn-red{background-color:blue}body .tt.btn-green,body>.btn-green.btn-red{background-color:green}body>.btn-red{background-color:red}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,11 @@
+body {
+  background-color: lightslategray;
+}
+body button {
+  border: 2px solid red;
+  padding: 10px;
+  background-color: chocolate;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */

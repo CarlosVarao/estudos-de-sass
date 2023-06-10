@@ -1,0 +1,190 @@
+================== Sass ==================
+
+O SASS é uma linguagem de extensão do CSS, a sigla significa “Syntactically Awesome Style Sheets” traduzindo ao pé da letra, folhas de estilo com uma sintaxe incrível. A sua ideia é adicionar recursos especiais como variáveis, mixins, funções e operações e outras opções variadas que iremos comentar. O SASS tem como objetivo tornar o processo de desenvolvimento mais simples e eficiente, porem existe 2 modelos para se trabalhar; ( ".Sass" / " .Scss ")
+
+Modelo 1 : " .Sass "
+Utiliza a extensão .sass, sem as chaves padrão do CSS, todo código gerado em SASS deve ser transformado em CSS, pois navegadores não leem arquivos .sass. 
+
+Modelo 2 : " .Scss "
+Utiliza a extensão .scss, é totalmente compatível com a sintaxe padrão CSS. É obrigatório o uso de chaves e ponto e vírgula após cada instrução. 
+
+=============================================
+
+
+
+
+================== Variaveis ==================
+
+As Variaveis no sass, servem para armazenarem algum tipo de configuração para depois ser chamada e ter um melhor controle de cod.
+
+Obs:  " $ " - o cifrão serve para que o SASS entenda que é uma Variavel
+
+Ex:
+
+$variavel-test: blue;
+
+$variavel-test1: 2px solid black;
+
+$variavel-test2: 70px;
+
+=============================================
+
+
+
+
+================== Nesting ==================
+
+O nesting você abre o bloco que você quer, podendo ser uma ID, uma classe, um elemento em sí e colocando os elementos que você quer manipular dentro dele.
+
+Ex:
+
+.lista{
+  ul{
+    background-color: black;
+  }
+
+  li{
+    width: 50%;
+    color: white;
+    background-color: red;
+
+  }
+}
+
+=============================================
+
+
+
+
+================== @import ==================
+
+O import é algo extremamente útil, onde você pode fazer com que vários itens trabalhem em pastas separadas, para deixar o código mais limpo e apenas com aquilo que realmente importa para você naquela página.
+
+Você pode criar dois arquivos .scss, e colocar variáveis em um dos arquivos, no segundo arquivo você vai importar o primeiro arquivo dentro do segundo e ter acesso a todas as variáveis que estão no primeiro.
+
+Ex:
+
+@import "./colors/colors.scss";
+
+=============================================
+
+
+
+
+================== @mixin ==================
+
+O mixin é algo que você consegue usar para ter um aproveitamento de linhas de código, você vai conseguir manipular certos elementos com menos linhas de código, de modo muito mais simples.
+
+Ex:
+
+@mixin text-style ($color, $font-size, $font-family) {
+  color: $color;
+  font-size: $font-size; 
+  font-family: $font-family; 
+}
+
+.title{
+  h1{
+    @include text-style(#ff4043, 34px, Arial)
+  }
+
+  p{
+    @include text-style(blue, 22px, sans-serif)
+  }
+}
+
+=============================================
+
+
+
+
+================== heranças/@extends ==================
+
+As heranças elas servem para como o próprio nome diz, herdar coisas de outros elementos, e o extend serve para extender propriedades de outros elementos, acabam sendo bem parecidas mas uma é melhor que a outra em certos momentos.
+
+Ex:
+
+Heranças:
+.btn {    width: 150px;
+    height: 50px;
+    background: none;
+    border-radius: 20px;
+
+    &.btn-roxo{
+        background-color: purple;
+    }
+}
+
+As extend é usada para herdar estilos de um seletor para outro. Ela permite que um seletor herde todas as propriedades de outro seletor, resultando em uma cascata de estilos.
+
+Ex:
+
+Extends:
+
+.message {
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+.alert {
+  @extend .message;
+  border: 1px solid red;
+}
+
+.success {
+  @extend .message;
+  border: 1px solid green;
+}
+=============================================
+
+
+
+
+================== @funções ==================
+
+As funções do sass é basicamente um conjunto de instruções que a gente executa para que nós retorne determinado valor.  
+
+
+Ex:
+
+Contem no SASS;
+.title{	color: mix(red, blue, 50%)
+}
+
+
+Criando manual;
+@function background-color($background) {
+  @if (lightness($background) > 50) {
+    @return black;
+  } @else {
+    @return white;
+  }
+} ;
+
+@mixin background-mixin($color-bg) {
+  background-color: $color-bg;
+  color: text-color($color-bg);
+}
+
+.title {
+  height: 100vh;
+  @include background-mixin(black);
+}
+
+=============================================
+
+
+
+
+================== minify ==================
+
+O minify é algo bem simples que mesmo sendo simples, deixa o seu site um pouco mais rápido. Ele vai deixar todo o seu css em apenas 1 linha, que vai facilitar um pouco o carregamento dele na página, que não vai fazer diferença imediata, mas para uma pessoa com um 3G lento fará muita diferença.
+
+
+Ex:
+
+sass sass/style.scss:style/style.css --style compressed
+
+=============================================
+
